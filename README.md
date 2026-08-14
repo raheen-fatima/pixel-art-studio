@@ -1,5 +1,5 @@
 # Pixel Art Studio
-
+![Pixel Art Studio Preview Image](https://github.com/HammadRyaz/pixel-art-studio/blob/main/src/previewImage.png?raw=true)
 Converts any image into high-quality pixel art, entirely client-side. No image data ever leaves the browser.
 
 ## Run it
