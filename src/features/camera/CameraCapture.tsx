@@ -55,7 +55,12 @@ export function CameraCapture({ onCapture, onCancel }: CameraCaptureProps) {
     };
   }, [facingMode, stopStream]);
 
-  useEffect(() => () => stopStream(), [stopStream]);
+  // Restart stream when facing mode changes to apply new constraint
+  useEffect(() => {
+    if (state !== 'live') return;
+    stopStream();
+    setState('requesting');
+  }, [facingMode, state, stopStream]);
 
   const capture = () => {
     const video = videoRef.current;
