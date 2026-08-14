@@ -97,6 +97,6 @@ export async function renderExportCanvas(result: ProcessedResult, pixelSize: num
 
 export function exportFileName(sourceName: string, result: ProcessedResult, format: ExportFormat): string {
   const withoutExt = sourceName.replace(/\.[^./]+$/, '');
-  const clean = withoutExt.replace(/[^a-z0-9-_]+/gi, '-').toLowerCase() || 'pixel-art';
+  const clean = withoutExt.replace(/[^a-z0-9-_]+/gi, '-').toLowerCase().replace(/^-+|-+$/g, '') || 'pixel-art';
   return `${clean}-${result.gridWidth}x${result.gridHeight}.${format}`;
 }
